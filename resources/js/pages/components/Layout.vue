@@ -16,8 +16,9 @@
                 <div class="card bg-base-100 shadow mt-8">
                     <div class="card-body">
                         <div>
-                            <p class="text-3xl font-bold">{{ chirp.text }}</p>
+                            <p class="mt-4 font-bold">{{ chirp.text }}</p>
                             <p class="mt-4 text-base-content/60">{{ chirp.created_at }}</p>
+                            <p class="mt-2 text-base-content/60">By: {{ chirp.user?.name ?? 'Anónimo' }}</p>
                         </div>
                     </div>
                 </div>
