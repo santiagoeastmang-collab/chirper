@@ -59,26 +59,30 @@
                                     {{ chirp.prettyDate }}
                                 </time>
                             </span>
-                            <span v-if="editChirp(chirp) ">
-                                <span class="text-base-content/60 pr-1 pl-1"> · </span>
-                                <span class="text-sm text-base-content/60 italic">edited </span>
-                            </span>
                         </div>
-
+                        
                         <div class="flex gap-1">
                             <a :href="`/chirps/${chirp.id}/edit`" class="btn btn-ghost btn-xs">
                                 Edit
                             </a>
                             <button type="button"
-                                @click="deleteChirp(chirp.id)"
-                                onclick="return confirm('Are you sure you want to delete this chirp?')"
-                                class="btn btn-ghost btn-xs text-error"
-                                :disabled="form.processing">
-                                Delete
-                            </button>
-                        </div>
+                            @click="deleteChirp(chirp.id)"
+                            onclick="return confirm('Are you sure you want to delete this chirp?')"
+                            class="btn btn-ghost btn-xs text-error"
+                            :disabled="form.processing">
+                            Delete
+                        </button>
                     </div>
-                    <p class="mt-1">{{ chirp.text }}</p>
+                </div>
+
+                <div class="flex items-center mt-1">
+                    <span class="flex-basis-xs">{{ chirp.text }}</span>
+                    <span v-if="editChirp(chirp) ">
+                        <span class="text-sm text-base-content/60 pr-1 pl-2"> · </span>
+                        <span class="text-sm text-base-content/60 italic">edited </span>
+                    </span>
+                </div>
+
                 </div>
             </div>
         </div>
