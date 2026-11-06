@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
 import { bunny } from 'laravel-vite-plugin/fonts';
 import { defineConfig, lazyPlugins } from 'vite-plus';
+import { resolve } from 'node:path';
 
 export default defineConfig({
     plugins: lazyPlugins(() => [
@@ -39,6 +40,8 @@ export default defineConfig({
                 '**/.cursor/**',
                 '**/.junie/**',
                 '**/vendor/**',
+                '**/storage/**',
+                resolve('laravel'),
             ],
         },
     },
